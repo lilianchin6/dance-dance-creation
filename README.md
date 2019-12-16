@@ -1,6 +1,6 @@
 # dance dance creation
 
-This repository contains compuer version of the game Dance Dance Revolution, similar to StepMania, where players use arrows on the computer to match beats with the music. Instead of using pre-selected songs, this program allows players to import their own songs in `.wav` format, where this program will analyze the music and provide an arrow sequence to the beats of the song. There is single-player, multi-player, and a no-fail mode.
+This repository contains computer version of the game Dance Dance Revolution, similar to StepMania, where players use arrows on the computer to match beats with the music. Instead of using pre-selected songs, this program allows players to import their own songs in `.wav` format, where this program will analyze the music and provide an arrow sequence to the beats of the song. There is single-player, multi-player, and a no-fail mode. This is written in Python 2.
 
 This game was written as a final project to a class using the professor's `eventBasedAnimation.py` file.
 
@@ -22,8 +22,8 @@ To install pygame:
 3. Using homebrew: brew install sdl sdl_image sdl_mixer sdl_ttf portmidi 
                    sudo pip install hg+http://bitbucket.org/pygame/pygame
 
-To use Tkinter (comes with Python distributions already)
 
+```
 At the top of the code, should be able to successfully import:
 import sys, os
 import eventBasedAnimation
@@ -38,4 +38,4 @@ from pygame.mixer import music
 import pygame as pg
 import string
 import random
-
+```
