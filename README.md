@@ -25,6 +25,8 @@ This game was written as a final project to a class Spring 2015 using the profes
 In command line, run `python dance.py`
 
 
+############################################################################################################
+
 
 Modules used: aubio, pygame, tkinter, eventBasedAnimation
 
