@@ -11,7 +11,7 @@ Modules used: aubio, pygame, Tkinter, eventBasedAnimation
 To install Aubio: 
 1. http://aubio.org/download
 Either download the binary that contains a directory called aubio.framework and drop this in the frameworks of Mac OS XCode project.
-2. Build aubio using homebrew: brew install aubio --with-python
+2. Build aubio using homebrew: brew install aubio
 3. Go down to python/ sub-directory and launch distulis script by: cd python/
 python setup.py build
 To install the python module, use: sudo python setup.py install
