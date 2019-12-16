@@ -1,6 +1,6 @@
 # dance dance creation
 
-This repository contains compuer version of the game Dance Dance Revolution, similar to StepMania, where players use arrows on the computer to match beats with the music. Instead of using pre-selected songs, this program allows players to import their own songs in `.wav` format, where this program will analyze the music and provide an arrow sequence to the beats of the song to the beats. There is single-player, multi-player, and a no-fail mode.
+This repository contains compuer version of the game Dance Dance Revolution, similar to StepMania, where players use arrows on the computer to match beats with the music. Instead of using pre-selected songs, this program allows players to import their own songs in `.wav` format, where this program will analyze the music and provide an arrow sequence to the beats of the song. There is single-player, multi-player, and a no-fail mode.
 
 This game was written as a final project to a class using the professor's `eventBasedAnimation.py` file.
 
