@@ -30,20 +30,6 @@ In command line, run `python dance.py`
 
 Modules used: aubio, pygame, tkinter, eventBasedAnimation
 
-To install Aubio: 
-1. http://aubio.org/download
-Either download the binary that contains a directory called aubio.framework and drop this in the frameworks of Mac OS XCode project.
-2. Build aubio using homebrew: brew install aubio
-3. Go down to python/ sub-directory and launch distulis script by: cd python/
-python setup.py build
-To install the python module, use: sudo python setup.py install
-
-To install pygame:
-1. Ubuntu and Linux Instructions: can enter "sudo apt-get install python2.7"
-2. Mac Instructions: go here http://www.pygame.org/download.shtml and download packages
-3. Using homebrew: brew install sdl sdl_image sdl_mixer sdl_ttf portmidi 
-                   sudo pip install hg+http://bitbucket.org/pygame/pygame
-
 
 ```
 At the top of the code, should be able to successfully import:
