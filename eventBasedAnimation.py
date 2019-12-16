@@ -38,14 +38,16 @@ EVENT_BASED_ANIMATION_VERSION = "1.10"
 #     * view (draw function) fails on setting write fields
 
 import sys
-if ((sys.version_info[0] != 2) or (sys.version_info[1] < 7)):
-    raise Exception("This script requires Python version 2.7 or higher")
+# if ((sys.version_info[0] != 2) or (sys.version_info[1] < 7)):
+#     raise Exception("This script requires Python version 2.7 or higher")
 
-from Tkinter import *
+# from Tkinter import *
+from tkinter import *
 import traceback
 import json
 import random
-import tkMessageBox
+from tkinter import messagebox
+# import tkMessageBox
 import signal
 
 class Struct(object): pass
@@ -143,7 +145,7 @@ def run(initFn=None, mouseFn=None, keyFn=None, stepFn=None, drawFn=None,
             if (fn != None):
                 fn(*args)
         except Exception as error:
-            print "***************\nError:", error
+            print("***************\nError:", error)
             traceback.print_exc(file=sys.stdout)
             data.isPaused = True
             data.errMsg = str(error)
@@ -190,7 +192,7 @@ def run(initFn=None, mouseFn=None, keyFn=None, stepFn=None, drawFn=None,
                 data.canvas.setBlocked(True)
                 if (doMvcCheck): data.userData.setReadOnly(False)
         except Exception as error:
-            print "***************\nError:", error
+            print("***************\nError:", error)
             traceback.print_exc(file=sys.stdout)
             data.isPaused = True
             data.errMsg = str(error)
@@ -311,9 +313,9 @@ def run(initFn=None, mouseFn=None, keyFn=None, stepFn=None, drawFn=None,
         callAnimationFn(quitFn, data.userData)
 
     def runAnimation():
-        print "eventBasedAnimation version %s" % (
-                  EVENT_BASED_ANIMATION_VERSION)
-        print "Press ctrl-h for help / see list of commands."
+        print("eventBasedAnimation version %s" % (
+                  EVENT_BASED_ANIMATION_VERSION))
+        print("Press ctrl-h for help / see list of commands.")
         reset()
         data.isPaused = False
         data.root = Tk()

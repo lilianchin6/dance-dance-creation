@@ -1,8 +1,11 @@
 import sys, os
 import eventBasedAnimation
-from Tkinter import *
-import Tkinter, Tkconstants, tkFileDialog
-import tkMessageBox
+# from Tkinter import *
+from tkinter import *
+from tkinter import messagebox, filedialog
+import tkinter
+# import Tkinter, Tkconstants, tkFileDialog
+# import tkMessageBox
 
 from aubio import source, onset
 
@@ -22,9 +25,11 @@ class Song(object):
         self.stepSize = 5 #stepping size of arrow
     
     def beatsInAubio(self, song):
-    	win_s = 1024
-        hop_s = win_s/2
+        win_s = 1024
+        hop_s = int(win_s/2)
         samplerate = 44100
+        print('hop_s', hop_s)
+        print(samplerate)
         s = source(song, samplerate, hop_s)
         samplerate = s.samplerate
         o = onset("default", win_s, hop_s, samplerate)
@@ -47,13 +52,13 @@ class Song(object):
     
     #makes the arrows based on the music beat analysis provided by aubio
     def makeArrows(self, beatTimes, player):
-    	directions = ["left", "right", "up", "down"]
-    	arrows = []
+        directions = ["left", "right", "up", "down"]
+        arrows = []
         #these arrows are chosen at random but a seed keeps it 
         #at the same time
         arrowY = 50
 
-    	random.seed(42)
+        random.seed(42)
         for arrow in range(0, len(beatTimes), 2):
             arrows.append(movingArrow(random.choice(directions), 0, 
             	          self.stepSize*arrowY/2*beatTimes[arrow] + arrowY, 
@@ -67,8 +72,8 @@ class Song(object):
 #class to keep track of the moving arrow itself
 class movingArrow(object):
     def __init__(self, direction, x, y, beat, song, combo, player):
-    	self.width, self.height = 800, 600
-    	self.leftArrowUnclicked = PhotoImage(file = "gifs/leftArrowUnclicked.gif")
+        self.width, self.height = 800, 600
+        self.leftArrowUnclicked = PhotoImage(file = "gifs/leftArrowUnclicked.gif")
         self.rightArrowUnclicked = PhotoImage(file = "gifs/rightArrowUnclicked.gif")
         self.downArrowUnclicked = PhotoImage(file = "gifs/downArrowUnclicked.gif")
         self.upArrowUnclicked = PhotoImage(file = "gifs/upArrowUnclicked.gif")
@@ -1408,7 +1413,7 @@ class SettingPage(object):
                 self.noFontSize = self.enlargedFailSize
                 self.noTextColor = "white"
             elif self.noFail == True:
-            	self.yesFontSize = self.enlargedFailSize
+                self.yesFontSize = self.enlargedFailSize
                 self.yesTextColor = "white"
                 self.noFontSize = self.regularFailSize
                 self.noTextColor = "red"
@@ -1761,7 +1766,8 @@ class StatisticsPage(object):
             self.mainMenuFontSize = self.mainMenuRegular
 
 #Select a song page
-class SelectASong(Tkinter.Frame):
+# class SelectASong(Tkinter.Frame):
+class SelectASong(tkinter.Frame):
     def __init__(self):
         self.width = 800
         self.height = 600
@@ -1789,7 +1795,8 @@ class SelectASong(Tkinter.Frame):
     
     def askOpenFileName(self):
         #get filename
-        filename = tkFileDialog.askopenfilename(**self.file_opt)
+        # filename = tkFileDialog.askopenfilename(**self.file_opt)
+        filename = filedialog.askopenfilename(**self.file_opt)
         return filename
 
     def drawSelectASong(self, canvas):
@@ -2110,7 +2117,8 @@ class DDR(eventBasedAnimation.Animation):
                 self.playMusic(self.song)
                 self.selectASong.selectedASong = True
             if self.selectASong.onMouseSelectPlay(event) == False:
-                tkMessageBox.showinfo("error", "Pick a song!")
+                # tkMessageBox.showinfo("error", "Pick a song!")
+                messageBox.showinfo("error", "Pick a song!")
             if self.selectASong.onMouseSelectPlay(event):
                 self.isGameScreen = True
                 self.isHomeScreen = False
